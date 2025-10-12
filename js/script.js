@@ -4,19 +4,24 @@ function calculatePrice() {
     const perimeter = parseFloat(document.getElementById('perimeter').value) || 0;
     const area = parseFloat(document.getElementById('area').value) || 0;
     const lights = parseInt(document.getElementById('lights').value) || 0;
-    const profileType = document.querySelector('input[name="profile"]:checked').value;
-    const tiles = document.getElementById('tileDrilling');
+    const finishType = document.querySelector('input[name="finish"]:checked').value;
+    const packageType = document.querySelector('input[name="package"]:checked').value;
+    const demolition = document.getElementById('demolition');
 
     // Расчет стоимости
 
-    let price = perimeter * 7.4 + area * 18 + lights * 10;
+    let price = area * 220 + perimeter * 18 + lights * 160;
 
-    // Надбавка за теневой профиль
-    if (profileType === 'shadow') {
-        price += 20 + (perimeter * 1.6);
+    if (finishType === 'designer') {
+        price += area * 65 + lights * 120;
     }
-    if (tiles.checked) {
-         price += perimeter * 6;
+
+    if (packageType === 'premium') {
+        price += area * 45 + perimeter * 12;
+    }
+
+    if (demolition && demolition.checked) {
+         price += area * 25;
     }
     // Округление до 10
     price = Math.round(price / 10) * 10;
@@ -28,13 +33,13 @@ function calculatePrice() {
     // Отображаем результат с анимацией
     const result = document.getElementById('calcResult');
     result.innerHTML = `
-        <div style="margin-bottom: 15px; font-size: 18px; font-weight: 500;"> Стоимость по заданным параметрам:</div>
+        <div style="margin-bottom: 15px; font-size: 18px; font-weight: 500;">Предварительная стоимость по введённым параметрам:</div>
         <div class="price-container">
             <div class="old-price-wrapper">
-                <div class="old-price">${price} $ </div>
+                <div class="old-price">${price} €</div>
             </div>
-            <div class="discount-badge">Ваша скидка 10%: -${discount} $</div>
-            <div class="new-price">Итого: ${finalPrice} $</div>
+            <div class="discount-badge">Ваша скидка 10%: -${discount} €</div>
+            <div class="new-price">Итого: ${finalPrice} €</div>
         </div>
     `;
     result.style.display = 'block';
@@ -58,9 +63,9 @@ async function sendCalculationToTelegram() {
     const perimeter = document.getElementById('perimeter').value;
     const area = document.getElementById('area').value;
     const lights = document.getElementById('lights').value;
-    const canvasType = document.querySelector('input[name="canvas"]:checked').value;
-    const profileType = document.querySelector('input[name="profile"]:checked').value;
-    const tileDrilling = document.getElementById('tileDrilling').checked;
+    const finishType = document.querySelector('input[name="finish"]:checked').value;
+    const packageType = document.querySelector('input[name="package"]:checked').value;
+    const demolition = document.getElementById('demolition').checked;
 
     // Получаем рассчитанные значения
     const resultBox = document.getElementById('calcResult');
@@ -81,8 +86,8 @@ async function sendCalculationToTelegram() {
         return;
     }
 
-    const canvasTypeLabel = canvasType === 'glossy' ? 'Глянцевый' : 'Матовый';
-    const profileTypeLabel = profileType === 'shadow' ? 'Теневой' : 'Стандартный';
+    const finishTypeLabel = finishType === 'designer' ? 'Дизайнерский' : 'Косметический';
+    const packageTypeLabel = packageType === 'premium' ? 'Премиальный пакет' : 'Базовая отделка';
 
     const messageParts = [
         '🔔 Новая заявка с сайта',
@@ -93,10 +98,10 @@ async function sendCalculationToTelegram() {
         'Параметры расчёта:',
         `• Площадь: ${area || '—'} м²`,
         `• Периметр: ${perimeter || '—'} м`,
-        `• Светильники: ${lights || '0'} шт.`,
-        `• Тип полотна: ${canvasTypeLabel}`,
-        `• Тип профиля: ${profileTypeLabel}`,
-        `• Сверление плитки: ${tileDrilling ? 'Да' : 'Нет'}`,
+        `• Помещения: ${lights || '0'} шт.`,
+        `• Уровень ремонта: ${finishTypeLabel}`,
+        `• Комплектация: ${packageTypeLabel}`,
+        `• Демонтаж старой отделки: ${demolition ? 'Да' : 'Нет'}`,
         '',
         'Результат расчёта:',
         resultText,
