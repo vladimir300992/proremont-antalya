@@ -309,6 +309,111 @@
         </div>
     </section>
 
+    <section class="masters" id="masters" data-aos="fade-up" data-aos-delay="120">
+        <div class="container">
+            <div class="masters__intro">
+                <span class="masters__eyebrow">Для мастеров и бригад</span>
+                <h2>Ищем партнёров для проектов в Анталии</h2>
+                <p>Мы регулярно подключаем проверенных подрядчиков к объектам в Анталии и регионе. Если вы уверены в качестве своих работ и готовы к долгосрочному сотрудничеству — оставьте заявку.</p>
+            </div>
+
+            <div class="masters__grid">
+                <article class="masters__card" data-aos="fade-up" data-aos-delay="160">
+                    <h3>Требования</h3>
+                    <ul class="masters__list">
+                        <li>Готовность показать текущие объекты и инструмент</li>
+                        <li>Прозрачные сметы без скрытых допработ</li>
+                        <li>Ответственность и высокое качество работ</li>
+                        <li>Соблюдение сроков и графиков</li>
+                        <li>Свободное владение русским языком</li>
+                    </ul>
+                    <p class="masters__note">Мы работаем только на долгосрочные отношения и ищем команды, разделяющие наш подход.</p>
+                </article>
+
+                <article class="masters__card masters__card--accent" data-aos="fade-up" data-aos-delay="220">
+                    <h3>Что мы предлагаем</h3>
+                    <ul class="masters__list">
+                        <li>Лучших заказчиков и стабильный поток объектов</li>
+                        <li>Без выездов на замеры и согласования — всё берём на себя</li>
+                        <li>Официальный договор и прозрачные расчёты</li>
+                        <li>Оплата по безналичному расчёту</li>
+                        <li>Закупка материалов и контроль готовности объекта с нашей стороны</li>
+                    </ul>
+                </article>
+            </div>
+
+            <form class="masters-form" data-telegram-form data-form-source="Форма для мастеров">
+                <h3 class="masters-form__title">Оставьте заявку, и мы свяжемся для обсуждения сотрудничества</h3>
+                <div class="masters-form__grid">
+                    <div class="masters-form__group">
+                        <label for="master-name">Имя</label>
+                        <input type="text" id="master-name" name="name" placeholder="Ваше имя" required data-label="Имя">
+                    </div>
+                    <div class="masters-form__group">
+                        <label for="master-phone">Телефон</label>
+                        <input type="tel" id="master-phone" name="phone" placeholder="+90" required data-label="Телефон">
+                    </div>
+                    <div class="masters-form__group">
+                        <label for="master-type">Формат работы</label>
+                        <select id="master-type" name="masterType" data-label="Формат работы" required>
+                            <option value="">Выберите вариант</option>
+                            <option value="Частный мастер">Частный мастер</option>
+                            <option value="Бригада">Бригада</option>
+                        </select>
+                    </div>
+                    <div class="masters-form__group">
+                        <label for="master-citizenship">Наличие гражданства</label>
+                        <select id="master-citizenship" name="citizenship" data-label="Наличие гражданства">
+                            <option value="">Выберите вариант</option>
+                            <option value="Гражданство Турции">Есть гражданство Турции</option>
+                            <option value="ВНЖ Турции">Есть ВНЖ Турции</option>
+                            <option value="Без гражданства Турции">Гражданства Турции нет</option>
+                        </select>
+                    </div>
+                    <div class="masters-form__group">
+                        <fieldset class="masters-form__fieldset">
+                            <legend>Наличие авто</legend>
+                            <div class="masters-form__options">
+                                <label>
+                                    <input type="radio" name="car" value="Есть авто" data-label="Наличие авто">
+                                    Есть авто
+                                </label>
+                                <label>
+                                    <input type="radio" name="car" value="Нет авто">
+                                    Нет авто
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="masters-form__group">
+                        <fieldset class="masters-form__fieldset">
+                            <legend>Знание языков</legend>
+                            <div class="masters-form__options">
+                                <label>
+                                    <input type="checkbox" name="languages" value="Русский" data-label="Знание языков">
+                                    Русский
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="languages" value="Турецкий">
+                                    Турецкий
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="languages" value="Английский">
+                                    Английский
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="masters-form__group masters-form__group--full">
+                        <label for="master-works">Вид выполняемых работ</label>
+                        <textarea id="master-works" name="workScope" rows="4" placeholder="Например: отделка, сантехника, электрика" data-label="Вид работ"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn masters-form__submit" data-loading-text="Отправляем...">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+
     <section class="faq" id="faq" data-aos="fade-up" data-aos-delay="100">
         <div class="container">
             <h2>Отвечаем на частые вопросы</h2>
