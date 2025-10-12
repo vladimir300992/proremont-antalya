@@ -8,7 +8,12 @@ window.TELEGRAM_CONFIG = TELEGRAM_CONFIG;
 const TELEGRAM_FIELD_LABELS = {
     name: 'Имя',
     phone: 'Телефон',
-    message: 'Комментарий'
+    message: 'Комментарий',
+    masterType: 'Формат работы',
+    citizenship: 'Наличие гражданства',
+    car: 'Наличие авто',
+    languages: 'Знание языков',
+    workScope: 'Вид выполняемых работ'
 };
 
 // Функция инициализации общих компонентов
@@ -233,7 +238,13 @@ async function sendTelegramLead(form) {
 
     const formData = new FormData(form);
     const entries = [];
-    const allowedFields = ['name', 'phone'];
+    const formSource = form.dataset.formSource || form.getAttribute('data-form-source');
+    const allowedFields = ['name', 'phone', 'message', 'masterType', 'citizenship', 'car', 'languages', 'workScope'];
+    const aggregated = {};
+
+    if (formSource) {
+        entries.push(`Источник: ${formSource}`);
+    }
 
     formData.forEach((value, key) => {
         if (!allowedFields.includes(key)) {
@@ -245,14 +256,22 @@ async function sendTelegramLead(form) {
             return;
         }
 
-        const fieldElement = form.querySelector(`[name="${key}"]`);
-        const label = fieldElement?.dataset.label || TELEGRAM_FIELD_LABELS[key] || key;
-        entries.push(`${label}: ${stringValue}`);
+        if (!aggregated[key]) {
+            aggregated[key] = [];
+        }
+
+        aggregated[key].push(stringValue);
     });
 
-    if (!entries.length) {
+    if (!aggregated.name?.length && !aggregated.phone?.length) {
         throw new Error('Не удалось определить контактные данные.');
     }
+
+    Object.entries(aggregated).forEach(([key, values]) => {
+        const fieldElement = form.querySelector(`[name="${key}"]`);
+        const label = fieldElement?.dataset.label || TELEGRAM_FIELD_LABELS[key] || key;
+        entries.push(`${label}: ${values.join(', ')}`);
+    });
 
     const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
