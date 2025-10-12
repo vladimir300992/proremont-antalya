@@ -1,0 +1,23 @@
+<svg width="360" height="120" viewBox="0 0 360 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">ProRemont Antalya — проверенные мастера</title>
+  <desc id="logoDesc">Логотип сервиса ProRemont Antalya: мы соединяем заказчиков с проверенными русскоязычными мастерами.</desc>
+  <defs>
+    <linearGradient id="emblemGradient" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1f3b63"/>
+      <stop offset="100%" stop-color="#274b7a"/>
+    </linearGradient>
+    <linearGradient id="bridgeGradient" x1="35" y1="38" x2="85" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f59a1b"/>
+      <stop offset="100%" stop-color="#ffd166"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="120" height="120" rx="26" fill="url(#emblemGradient)"/>
+  <circle cx="38" cy="46" r="9" fill="#f4f7fb" opacity="0.9"/>
+  <circle cx="82" cy="46" r="9" fill="#f4f7fb" opacity="0.9"/>
+  <path d="M30 74c7-16 22-26 34-26s27 10 34 26" stroke="url(#bridgeGradient)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M44 74l12 12c3 3 7 3 10 0l12-12" stroke="#f4f7fb" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+  <text x="60" y="100" text-anchor="middle" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="18" font-weight="700" fill="#f4f7fb" letter-spacing="0.18em">PR HUB</text>
+  <text x="140" y="52" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="28" font-weight="700" fill="#0d1e33" letter-spacing="0.03em">ProRemont Antalya</text>
+  <text x="140" y="78" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="16" font-weight="600" fill="#1f3b63" letter-spacing="0.12em">ПРОВЕРЕННЫЕ РУССКОЯЗЫЧНЫЕ МАСТЕРА</text>
+  <text x="140" y="102" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="15" font-weight="400" fill="#4c5668">Мы объединяем заказчиков и мастеров без наценок</text>
+</svg>

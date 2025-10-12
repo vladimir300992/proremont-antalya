@@ -46,18 +46,36 @@ body {
 }
 
 /* Логотип */
+
 .logo {
   flex: 0 0 auto;
 }
 
 .logo-img {
-  height: 70px;
+  height: 88px;
   width: auto;
   transition: transform 0.3s;
 }
 
 .logo-img:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .logo-img {
+    height: 72px;
+  }
 }
 
 /* Ensure all images are responsive */
