@@ -1,6 +1,6 @@
 <svg width="360" height="120" viewBox="0 0 360 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
   <title id="logoTitle">ProRemont Antalya — проверенные мастера</title>
-  <desc id="logoDesc">Логотип сервиса ProRemont Antalya: мы соединяем заказчиков с проверенными русскоязычными мастерами.</desc>
+  <desc id="logoDesc">Логотип сервиса ProRemont Antalya: проверенные русскоязычные мастера для ремонта в Турции.</desc>
   <defs>
     <linearGradient id="emblemGradient" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#1f3b63"/>
@@ -19,5 +19,5 @@
   <text x="60" y="100" text-anchor="middle" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="18" font-weight="700" fill="#f4f7fb" letter-spacing="0.18em">PR HUB</text>
   <text x="140" y="52" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="28" font-weight="700" fill="#0d1e33" letter-spacing="0.03em">ProRemont Antalya</text>
   <text x="140" y="78" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="16" font-weight="600" fill="#1f3b63" letter-spacing="0.12em">ПРОВЕРЕННЫЕ РУССКОЯЗЫЧНЫЕ МАСТЕРА</text>
-  <text x="140" y="102" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="15" font-weight="400" fill="#4c5668">Мы объединяем заказчиков и мастеров без наценок</text>
+  <text x="140" y="102" font-family="'Montserrat', 'Segoe UI', 'Arial', sans-serif" font-size="15" font-weight="400" fill="#4c5668">Ремонт для своих в Турции</text>
 </svg>
