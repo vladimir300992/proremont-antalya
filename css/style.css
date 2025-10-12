@@ -1,12 +1,13 @@
 /* Базовые стили */
 :root {
-  --primary: #2b9df4;
-  --primary-dark: #0b2d5c;
-  --dark: #1a2233;
-  --light: #f1f6fb;
-  --accent: #12b0df;
+  --primary: #1f3b63;
+  --primary-dark: #0d1e33;
+  --dark: #111827;
+  --light: #f4f7fb;
+  --accent: #f59a1b;
   --text: #1b1f2c;
   --gray: #4c5668;
+  --muted: #6b7280;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
   line-height: 1.6;
   background-color: var(--light);
   overflow-x: hidden;
+  background-image: linear-gradient(180deg, rgba(244, 247, 251, 0.95), rgba(244, 247, 251, 0.75));
 }
 
 .container {
@@ -115,9 +117,11 @@ img {
 
 /* Навигационное меню */
 .navbar-fullwidth {
-  background: linear-gradient(90deg, var(--primary-dark) 0%, #133b6d 100%);
+  background: linear-gradient(90deg, var(--primary-dark) 0%, #1f3b63 50%, #274b7a 100%);
   width: 100%;
   margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-fullwidth .container {
@@ -153,7 +157,7 @@ img {
 }
 
 .navbar-menu a:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(245, 154, 27, 0.14);
 }
 
 .navbar-menu .active a {
@@ -354,17 +358,38 @@ img {
 
 /* Главная страница */
 .main {
-  background: linear-gradient(135deg, rgba(11, 45, 92, 0.94), rgba(6, 24, 54, 0.94));
+  position: relative;
+  background: linear-gradient(120deg, rgba(11, 27, 48, 0.88), rgba(11, 27, 48, 0.76)),
+    url('https://images.unsplash.com/photo-1431578500526-4d9613015464?auto=format&fit=crop&w=1920&q=85');
   background-size: cover;
+  background-position: center;
   color: white;
-  padding: 80px 0 80px;
-  text-align: center;
+  padding: 110px 0 120px;
+  overflow: hidden;
+}
+
+.main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(17, 24, 39, 0.65) 0%, rgba(17, 24, 39, 0.45) 55%, rgba(17, 24, 39, 0.8) 100%);
+  pointer-events: none;
+}
+
+.main .container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 35px;
+  max-width: 1080px;
+  text-align: left;
 }
 
 .main h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  line-height: 1.3;
+  font-size: clamp(2.4rem, 3vw + 1.2rem, 3.6rem);
+  margin: 0;
+  line-height: 1.25;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .main span {
@@ -373,134 +398,217 @@ img {
 
 .main-highlights {
   display: grid;
-  gap: 30px;
-  margin: 40px auto 0;
-  width: 100%;
-  max-width: 1000px;
-  justify-items: center;
-}
-
-.feature-cards {
-  display: grid;
-  gap: 20px;
-  width: 100%;
-  justify-items: center;
-  align-items: start;
-}
-
-@media (min-width: 576px) {
-  .feature-cards {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
+  gap: 24px;
 }
 
 .benefits-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 300px;
-  display: block;
+  margin: 0;
+  display: grid;
+  gap: 18px;
 }
 
 .benefits-list li {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 14px;
   font-size: 18px;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.92);
   line-height: 1.6;
-  width: 100%;
 }
 
-.check-icon {
+.benefit-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(245, 154, 27, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  box-shadow: 0 8px 18px rgba(245, 154, 27, 0.25);
+}
+
+.benefit-icon svg {
   width: 24px;
   height: 24px;
-  margin-right: 12px;
-  object-fit: contain;
 }
 
-/* Кнопки */
-  .calculator-actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 30px;
-  }
+.feature-cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
 
-  .calc-buttons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-  }
+.feature-card {
+  background: rgba(15, 25, 40, 0.75);
+  border-radius: 16px;
+  padding: 26px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(8, 15, 27, 0.45);
+  display: grid;
+  gap: 12px;
+}
 
-  .calc-label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    max-width: 260px;
-  }
+.feature-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(245, 154, 27, 0.25), rgba(245, 154, 27, 0.05));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
 
-  .calc-text {
-    font-size: 18px;
-    margin: 0;
-    text-align: center;
-    line-height: 1.4;
-  }
+.feature-card__icon svg {
+  width: 28px;
+  height: 28px;
+}
 
-  .calc-label--eco,
-  .calc-label--bauf,
-  .calc-label--certificates {
-    justify-self: center;
-  }
+.feature-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
 
-  .calc-icon {
-    width: 100px;
-    height: 100px;
-    flex-shrink: 0;
-  }
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: rgba(226, 232, 240, 0.85);
+}
 
-  .bauf-logo {
-    width: 200px;
-    height: 75px;
-    margin-top: 22px;
-  }
+.construction-gallery {
+  padding: 80px 0 60px;
+  background: #ffffff;
+}
+
+.construction-gallery .container {
+  display: grid;
+  gap: 40px;
+}
+
+.gallery-header {
+  display: grid;
+  gap: 12px;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.gallery-header h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: var(--dark);
+}
+
+.gallery-header p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.construction-gallery__grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.construction-gallery figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  min-height: 260px;
+  box-shadow: 0 20px 40px rgba(15, 25, 40, 0.12);
+}
+
+.construction-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: saturate(105%);
+}
+
+.construction-gallery figure::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.7) 100%);
+  transition: opacity 0.5s ease;
+}
+
+.construction-gallery figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20px 22px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.construction-gallery figure:hover img {
+  transform: scale(1.05);
+}
+
+.construction-gallery figure:hover::after {
+  opacity: 0.95;
+}
+
+.calculator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.calc-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 .btn {
   padding: 14px 30px;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, #ffb347 100%);
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 20px;
-  font-weight: 500;
-  transition: all 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  box-shadow: 0 12px 25px rgba(245, 154, 27, 0.25);
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+  background: linear-gradient(90deg, #ffb347 0%, var(--accent) 100%);
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(11, 45, 92, 0.25);
+  box-shadow: 0 16px 30px rgba(245, 154, 27, 0.35);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: none;
 }
 
 .btn-secondary:hover {
-  background: rgba(43, 157, 244, 0.1);
+  background: rgba(245, 154, 27, 0.12);
+  color: var(--primary-dark);
 }
 
 /* Калькулятор */
@@ -778,11 +886,20 @@ img {
   }
 
   .main {
-    padding-top: 130px;
+    padding: 90px 0 100px;
+  }
+
+  .main .container {
+    text-align: center;
+    justify-items: center;
   }
 
   .main h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .feature-cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
     /* Navigation menu rules moved to dedicated block below */
@@ -851,15 +968,50 @@ img {
   .footer-columns {
     grid-template-columns: 1fr;
   }
+
+  .main .container {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .feature-cards {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .construction-gallery {
+    padding: 60px 0 40px;
+  }
+
+  .gallery-header h2 {
+    font-size: 1.9rem;
+  }
 }
 
   @media (max-width: 576px) {
+    .main {
+      padding: 80px 0 90px;
+    }
+
     .main h1 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+    }
+
+    .main .container {
+      text-align: center;
+      justify-items: center;
+      gap: 24px;
+    }
+
+    .benefits-list {
+      gap: 14px;
+    }
+
+    .benefit-icon {
+      width: 40px;
+      height: 40px;
     }
 
     .calculator-actions {
-      display: flex;
       flex-direction: column;
       align-items: center;
       gap: 15px;
@@ -868,39 +1020,48 @@ img {
     .calc-buttons {
       flex-direction: column;
       width: 100%;
+      align-items: stretch;
     }
 
-    .calc-label {
+    .construction-gallery__grid {
+      gap: 18px;
+    }
+
+    .construction-gallery figure {
+      min-height: 210px;
+    }
+
+    .gallery-header h2 {
+      font-size: 1.6rem;
+    }
+
+    .gallery-header p {
+      font-size: 0.95rem;
+    }
+
+    .radio-group {
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      gap: 12px;
+      gap: 10px;
     }
-
-  .radio-group {
-    flex-direction: column;
-    gap: 10px;
-  }
 
     .btn {
       width: 100%;
       padding: 12px;
     }
 
-  .modal-content {
-    padding: 20px;
-  }
+    .modal-content {
+      padding: 20px;
+    }
 
-  .navbar-menu li {
-    flex: none;
-    width: 100%;
-    text-align: left;
-  }
+    .navbar-menu li {
+      flex: none;
+      width: 100%;
+      text-align: left;
+    }
 
-  .navbar-menu a {
-    padding: 12px 15px;
-  }
+    .navbar-menu a {
+      padding: 12px 15px;
+    }
 }
 
 /* Отзывы */
