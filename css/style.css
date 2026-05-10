@@ -52,7 +52,7 @@ body {
 }
 
 .logo-img {
-  height: 88px;
+  height: 176px;
   width: auto;
   transition: transform 0.3s;
 }
@@ -63,7 +63,7 @@ body {
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 80px;
+    height: 160px;
   }
 }
 
@@ -74,7 +74,7 @@ body {
   }
 
   .logo-img {
-    height: 72px;
+    height: 144px;
   }
 }
 
@@ -86,8 +86,8 @@ img {
 
 /* Центральный текст */
 .header-text {
-  flex: 1;
-  text-align: center;
+  flex: 0 1 auto;
+  text-align: left;
   padding: 0 20px;
   font-size: 18px;
   color: var(--gray);
