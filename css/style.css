@@ -1933,6 +1933,7 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1969,6 +1970,24 @@ img {
   margin: 0;
   line-height: 1.5;
   color: var(--text);
+}
+
+@media (max-width: 767px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .service-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -2328,4 +2347,3 @@ img {
     flex-direction: row;
   }
 }
-
