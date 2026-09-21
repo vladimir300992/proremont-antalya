@@ -52,8 +52,10 @@ body {
 }
 
 .logo-img {
-  height: 176px;
+  height: 64px;
   width: auto;
+  max-width: 220px;
+  object-fit: contain;
   transition: transform 0.3s;
 }
 
@@ -63,18 +65,49 @@ body {
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 160px;
+    height: 52px;
+    max-width: 160px;
   }
 }
 
 @media (max-width: 576px) {
   .logo {
-    width: 100%;
-    margin-bottom: 10px;
+    width: auto;
+    max-width: 55%;
+    margin-bottom: 0;
   }
 
   .logo-img {
-    height: 144px;
+    height: 44px;
+    max-width: 140px;
+  }
+
+  .header {
+    padding: 8px 0;
+  }
+
+  .header .container {
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .header-contacts {
+    max-width: 45%;
+    align-items: flex-end;
+  }
+
+  .phone {
+    font-size: 12px;
+  }
+
+  .social-links {
+    gap: 12px;
+  }
+
+  .social-links img {
+    width: 20px;
+    height: 20px;
   }
 }
 
