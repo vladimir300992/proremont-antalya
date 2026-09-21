@@ -52,9 +52,9 @@ body {
 }
 
 .logo-img {
-  height: 64px;
+  height: 96px;
   width: auto;
-  max-width: 220px;
+  max-width: 280px;
   object-fit: contain;
   transition: transform 0.3s;
 }
@@ -65,8 +65,8 @@ body {
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 52px;
-    max-width: 160px;
+    height: 80px;
+    max-width: 220px;
   }
 }
 
@@ -78,8 +78,8 @@ body {
   }
 
   .logo-img {
-    height: 44px;
-    max-width: 140px;
+    height: 68px;
+    max-width: 180px;
   }
 
   .header {
