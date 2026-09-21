@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио ремонтов | PRO Ремонт Antalya</title>
-    <meta name="description" content="Реализованные ремонты квартир, вилл и коммерческих объектов в Анталии. Ванные, кухни, спальни, гостиные и outdoor-зоны под ключ.">
+    <meta name="description" content="Портфолио ремонтов в Анталии: карточки объектов с районом, метражом и сроком — публикуем только проверенные кейсы. Фото фрагментов работ и связь с русскоязычными мастерами.">
     <meta property="og:title" content="Портфолио ремонтов в Анталии">
-    <meta property="og:description" content="Посмотрите, как мы реализуем ванные комнаты, кухни, спальни, гостиные и террасы в Анталии и по побережью.">
+    <meta property="og:description" content="Карточки реальных объектов и фото работ. Проверенные русскоязычные мастера ProRemont Antalya.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://proremont-antalya.com/rphotos.html">
     <meta property="og:image" content="https://proremont-antalya.com/logo.png">
     <meta property="og:locale" content="ru_RU">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Портфолио ремонтов | PRO Ремонт Antalya">
-    <meta name="twitter:description" content="Вдохновляйтесь реализованными проектами ремонтов квартир, вилл и коммерческих пространств в Анталии.">
+    <meta name="twitter:description" content="Карточки объектов и фото работ по ремонту в Анталии. Без выдуманных кейсов — только то, что можно подтвердить.">
     <meta name="twitter:image" content="https://proremont-antalya.com/logo.png">
-    <!-- Добавляем параметр версии для предотвращения кэширования CSS -->
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="canonical" href="https://proremont-antalya.com/rphotos.html">
+    <link rel="stylesheet" href="css/style.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
@@ -76,89 +76,137 @@
     <section class="page-content">
         <div class="container">
             <h1 class="page-title">Портфолио ремонтов</h1>
-            <p class="section-subtitle">Реальные проекты квартир, вилл и коммерческих пространств, которые мы завершили в Анталии и по всему побережью.</p>
-            <p>Каждый объект ведём по прозрачному графику, делаем фото- и видеоотчёты и фиксируем результат в актах. Смотрите подборку ключевых направлений и вдохновляйтесь решениями.</p>
+            <p class="section-subtitle">Ремонты в Анталии — проверенные русскоязычные мастера. Здесь будут карточки реальных объектов: тип, район, метраж, срок и бюджетная вилка.</p>
+            <p>Мы не публикуем выдуманные кейсы. Полные карточки объектов появятся после сверки с фактическими проектами. Пока можно посмотреть фрагменты отделки ниже и запросить свежие фото/видео по похожему объекту в чате.</p>
 
-            <div class="work-section" id="bathroom">
-                <h2>Ванные комнаты и спа-зоны</h2>
-                <p>Полная реконструкция санузлов: усиливаем гидроизоляцию, монтируем вентиляцию, подбираем плитку и сантехнику, интегрируем хаммамы и сауны. Результат — безупречная геометрия и приятная атмосфера.</p>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img src="img/bathroom1.png" alt="Ремонт ванной комнаты в Анталии 1">
-                        <img src="img/bathroom2.png" alt="Ремонт ванной комнаты в Анталии 2">
-                        <img src="img/bathroom3.png" alt="Ремонт ванной комнаты в Анталии 3">
-                        <img src="img/bathroom4.png" alt="Ремонт ванной комнаты в Анталии 4">
-                        <img src="img/bathroom5.png" alt="Ремонт ванной комнаты в Анталии 5">
+            <!-- Object cards: template + empty state (no invented case data) -->
+            <div class="portfolio-objects" id="objects">
+                <div class="portfolio-objects-head">
+                    <h2>Карточки объектов</h2>
+                    <p class="portfolio-objects-note">Формат, к которому идём: название / тип · район · м² · срок · до/после · бюджет (EUR). Данные — только подтверждённые.</p>
+                </div>
+
+                <div class="object-cards">
+                    <!-- Template card (structure demo, not a real project) -->
+                    <article class="object-card object-card--template" aria-label="Шаблон карточки объекта">
+                        <div class="object-card__media object-card__media--placeholder">
+                            <span class="object-badge">Шаблон</span>
+                            <span class="object-card__placeholder-label">Фото объекта</span>
+                        </div>
+                        <div class="object-card__body">
+                            <div class="object-card__meta">
+                                <span class="object-type">Тип: квартира / вилла</span>
+                                <span class="object-stage">После</span>
+                            </div>
+                            <h3 class="object-card__title">Название объекта</h3>
+                            <ul class="object-facts">
+                                <li><span>Район</span><strong>— заполняется</strong></li>
+                                <li><span>Метраж</span><strong>— м²</strong></li>
+                                <li><span>Срок работ</span><strong>— недели / месяцы</strong></li>
+                                <li><span>Бюджет</span><strong>— вилка в €</strong></li>
+                            </ul>
+                            <p class="object-card__note">Кратко: что сделали (черновые / чистовые / инженерия). Без выдуманных цифр.</p>
+                        </div>
+                    </article>
+
+                    <!-- Empty slots waiting for real cases -->
+                    <article class="object-card object-card--empty">
+                        <div class="object-card__empty-inner">
+                            <span class="object-badge object-badge--soft">Скоро</span>
+                            <h3>Карточка объекта №1</h3>
+                            <p>Ждём подтверждённые данные: район, метраж, срок, бюджет и фото.</p>
+                        </div>
+                    </article>
+
+                    <article class="object-card object-card--empty">
+                        <div class="object-card__empty-inner">
+                            <span class="object-badge object-badge--soft">Скоро</span>
+                            <h3>Карточка объекта №2</h3>
+                            <p>Сюда попадёт реальный кейс после сверки с объектом.</p>
+                        </div>
+                    </article>
+
+                    <article class="object-card object-card--empty">
+                        <div class="object-card__empty-inner">
+                            <span class="object-badge object-badge--soft">Скоро</span>
+                            <h3>Карточка объекта №3</h3>
+                            <p>Формат готов — контент только фактами.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio-cta">
+                    <div class="portfolio-cta__text">
+                        <h3>Нужны свежие кейсы под ваш объект?</h3>
+                        <p>Напишите район, примерный метраж и что нужно сделать — пришлём релевантные фото и ориентир по сроку/бюджету в WhatsApp или Telegram. Это не маркетплейс: работаем своей командой проверенных русскоязычных мастеров.</p>
+                    </div>
+                    <div class="portfolio-cta__actions">
+                        <a class="btn" href="https://wa.me/905348287110?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%82%D1%8C%20%D0%BA%D0%B5%D0%B9%D1%81%D1%8B%20%D0%BF%D0%BE%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D1%83" target="_blank" rel="noopener">WhatsApp — запросить кейсы</a>
+                        <a class="btn btn-outline" href="https://t.me/proremont_antalya" target="_blank" rel="noopener">Telegram</a>
                     </div>
                 </div>
             </div>
 
-            <div class="work-section" id="bedroom">
-                <h2>Спальни и приватные зоны</h2>
-                <p>Создаём мягкие интерьеры с продуманной подсветкой, системами хранения и тихими климатическими решениями. Используем экологичные материалы и тёплые текстуры.</p>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img src="img/bedroom1.png" alt="Ремонт спальни в Анталии 1">
-                        <img src="img/bedroom2.png" alt="Ремонт спальни в Анталии 2">
-                        <img src="img/bedroom3.png" alt="Ремонт спальни в Анталии 3">
-                        <img src="img/bedroom4.png" alt="Ремонт спальни в Анталии 4">
-                        <img src="img/bedroom5.png" alt="Ремонт спальни в Анталии 5">
+            <!-- Craftsmanship gallery: photos only, no fake project claims -->
+            <div class="portfolio-gallery" id="gallery">
+                <h2>Фрагменты работ</h2>
+                <p class="portfolio-gallery-note">Фото с объектов и отделочных решений. Без привязки к конкретному адресу, метражу или бюджету — полные карточки появятся отдельно, когда данные будут подтверждены.</p>
+
+                <div class="work-section" id="bathroom">
+                    <h3>Ванные и санузлы</h3>
+                    <div class="craft-grid">
+                        <figure class="craft-item"><img src="img/bathroom1.png" alt="Отделка ванной — потолок, свет, плитка" loading="lazy"><figcaption>После · ванная</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bathroom2.png" alt="Отделка ванной — фрагмент работ" loading="lazy"><figcaption>После · ванная</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bathroom3.png" alt="Душевая зона — свет и плитка" loading="lazy"><figcaption>После · душевая</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bathroom4.png" alt="Санузел — чистовая отделка" loading="lazy"><figcaption>После · санузел</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bathroom5.png" alt="Ванная — финишные работы" loading="lazy"><figcaption>После · ванная</figcaption></figure>
                     </div>
                 </div>
-            </div>
 
-            <div class="work-section" id="kitchen">
-                <h2>Кухни и столовые</h2>
-                <p>Проектируем кухни под европейскую и турецкую технику, продумываем инженерные точки, вытяжку и освещение. Собираем мебель на заказ и устанавливаем каменные столешницы.</p>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img src="img/kitchen1.png" alt="Ремонт кухни в Анталии 1">
-                        <img src="img/kitchen2.png" alt="Ремонт кухни в Анталии 2">
-                        <img src="img/kitchen1.png" alt="Ремонт кухни в Анталии 3">
-                        <img src="img/kitchen2.png" alt="Ремонт кухни в Анталии 4">
-                        <img src="img/kitchen1.png" alt="Ремонт кухни в Анталии 5">
+                <div class="work-section" id="bedroom">
+                    <h3>Спальни</h3>
+                    <div class="craft-grid">
+                        <figure class="craft-item"><img src="img/bedroom1.png" alt="Спальня — потолок и свет" loading="lazy"><figcaption>После · спальня</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bedroom2.png" alt="Спальня — отделка" loading="lazy"><figcaption>После · спальня</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bedroom3.png" alt="Спальня — финиш" loading="lazy"><figcaption>После · спальня</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bedroom4.png" alt="Спальня — свет и потолок" loading="lazy"><figcaption>После · спальня</figcaption></figure>
+                        <figure class="craft-item"><img src="img/bedroom5.png" alt="Спальня — чистовая" loading="lazy"><figcaption>После · спальня</figcaption></figure>
                     </div>
                 </div>
-            </div>
 
-            <div class="work-section" id="living">
-                <h2>Гостиные и общие пространства</h2>
-                <p>Объединяем кухню и гостиную, выделяем зоны отдыха, создаём акцентные стены и интегрируем мультимедийные системы. Добиваемся визуальной лёгкости и функциональности.</p>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img src="img/living1.png" alt="Ремонт гостиной в Анталии 1">
-                        <img src="img/living2.png" alt="Ремонт гостиной в Анталии 2">
-                        <img src="img/living3.png" alt="Ремонт гостиной в Анталии 3">
-                        <img src="img/living4.png" alt="Ремонт гостиной в Анталии 4">
-                        <img src="img/living5.png" alt="Ремонт гостиной в Анталии 5">
+                <div class="work-section" id="kitchen">
+                    <h3>Кухни</h3>
+                    <div class="craft-grid">
+                        <figure class="craft-item"><img src="img/kitchen1.png" alt="Кухня — потолок и треки" loading="lazy"><figcaption>После · кухня</figcaption></figure>
+                        <figure class="craft-item"><img src="img/kitchen2.png" alt="Кухня — отделка" loading="lazy"><figcaption>После · кухня</figcaption></figure>
                     </div>
                 </div>
-            </div>
 
-            <div class="work-section" id="kids">
-                <h2>Детские и подростковые комнаты</h2>
-                <p>Продумываем безопасные отделочные материалы, эргономичную мебель и сценарии освещения. Учитываем рост ребёнка, учебную зону и места для хранения игрушек.</p>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img src="img/kids1.png" alt="Ремонт детской комнаты в Анталии 1">
-                        <img src="img/kids2.png" alt="Ремонт детской комнаты в Анталии 2">
-                        <img src="img/kids3.png" alt="Ремонт детской комнаты в Анталии 3">
-                        <img src="img/kids1.png" alt="Ремонт детской комнаты в Анталии 4">
-                        <img src="img/kids2.png" alt="Ремонт детской комнаты в Анталии 5">
+                <div class="work-section" id="living">
+                    <h3>Гостиные</h3>
+                    <div class="craft-grid">
+                        <figure class="craft-item"><img src="img/living1.png" alt="Гостиная — многоуровневый потолок" loading="lazy"><figcaption>После · гостиная</figcaption></figure>
+                        <figure class="craft-item"><img src="img/living2.png" alt="Гостиная — отделка" loading="lazy"><figcaption>После · гостиная</figcaption></figure>
+                        <figure class="craft-item"><img src="img/living3.png" alt="Гостиная — свет" loading="lazy"><figcaption>После · гостиная</figcaption></figure>
+                        <figure class="craft-item"><img src="img/living4.png" alt="Гостиная — финиш" loading="lazy"><figcaption>После · гостиная</figcaption></figure>
+                        <figure class="craft-item"><img src="img/living5.png" alt="Гостиная — чистовая" loading="lazy"><figcaption>После · гостиная</figcaption></figure>
                     </div>
                 </div>
-            </div>
 
-            <div class="work-section" id="commercial">
-                <h2>Коммерческие интерьеры</h2>
-                <p>Оформляем шоурумы, офисы, рестораны и апартаменты для аренды. Работаем с турецкими нормами безопасности, подбираем износостойкие материалы и учитываем поток посетителей.</p>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img src="img/commercial1.png" alt="Ремонт коммерческого помещения в Анталии 1">
-                        <img src="img/commercial2.png" alt="Ремонт коммерческого помещения в Анталии 2">
-                        <img src="img/commercial1.png" alt="Ремонт коммерческого помещения в Анталии 3">
-                        <img src="img/commercial2.png" alt="Ремонт коммерческого помещения в Анталии 4">
-                        <img src="img/commercial1.png" alt="Ремонт коммерческого помещения в Анталии 5">
+                <div class="work-section" id="kids">
+                    <h3>Детские</h3>
+                    <div class="craft-grid">
+                        <figure class="craft-item"><img src="img/kids1.png" alt="Детская — потолок и покраска" loading="lazy"><figcaption>После · детская</figcaption></figure>
+                        <figure class="craft-item"><img src="img/kids2.png" alt="Детская — отделка" loading="lazy"><figcaption>После · детская</figcaption></figure>
+                        <figure class="craft-item"><img src="img/kids3.png" alt="Детская — финиш" loading="lazy"><figcaption>После · детская</figcaption></figure>
+                    </div>
+                </div>
+
+                <div class="work-section" id="commercial">
+                    <h3>Коммерческие пространства</h3>
+                    <div class="craft-grid">
+                        <figure class="craft-item"><img src="img/commercial1.png" alt="Коммерческий интерьер — потолок и свет" loading="lazy"><figcaption>После · коммерция</figcaption></figure>
+                        <figure class="craft-item"><img src="img/commercial2.png" alt="Коммерческий интерьер — отделка" loading="lazy"><figcaption>После · коммерция</figcaption></figure>
                     </div>
                 </div>
             </div>
@@ -168,8 +216,8 @@
     <!-- SEO текст с внутренними ссылками -->
     <section class="seo-text">
         <div class="container">
-            <h2>Работаем по всей Анталии и побережью</h2>
-            <p>Выполняем ремонты в Анталии, Кемере, Белеке, Сиде, Манавгате и Алании. Реализуем проекты под аренду и для личного проживания, беремся за <a href="potolki.html#cosmetic">косметику</a>, <a href="potolki.html#comfort">капитальные ремонты</a>, <a href="potolki.html#designer">дизайнерские интерьеры</a> и <a href="potolki.html#commercial">коммерческие помещения</a>. Изучите <a href="ceny.html">стоимость пакетов</a> и <a href="index.html#calculatorSection">рассчитайте смету</a>.</p>
+            <h2>Ремонты в Анталии и по побережью</h2>
+            <p>Работаем в Анталии и регионе. Берёмся за <a href="potolki.html#cosmetic">косметику</a>, <a href="potolki.html#comfort">капитальные ремонты</a>, <a href="potolki.html#designer">дизайнерские интерьеры</a> и <a href="potolki.html#commercial">коммерческие помещения</a>. Изучите <a href="ceny.html">стоимость</a> и <a href="index.html#calculatorSection">рассчитайте ориентир</a>. Карточки объектов с районом и метражом публикуем только после сверки фактов.</p>
         </div>
     </section>
 
@@ -179,7 +227,7 @@
             <div class="footer-columns">
                 <div class="footer-col">
                     <h3>PRO Ремонт Antalya</h3>
-                    <p>Комплексные ремонты, авторский надзор и сервис по всему побережью Средиземного моря.</p>
+                    <p>Ремонты в Анталии — проверенные русскоязычные мастера. Не маркетплейс: ведём объекты своей командой.</p>
                 </div>
                 <div class="footer-col">
                     <h3>Контакты</h3>
@@ -221,6 +269,5 @@
 
     <script src="js/components.js" defer></script>
     <script src="js/script.js" defer></script>
-    <script src="js/work-carousel.js" defer></script>
 </body>
 </html>
